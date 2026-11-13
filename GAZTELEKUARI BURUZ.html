@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<head>
+    <title>ERMUA GAZTELEKUA</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            min-height: 100vh;
+            width: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .marcoa {
+            padding: 20px;
+            background-color: #5C3C78;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        header h2 {
+            font-size: 2rem;
+            color: #faf8fc;
+        }
+
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        .lang-selector {
+            display: flex;
+            gap: 5px;
+        }
+
+        .lang-btn {
+            background-color: #eee6f5;
+            color: #5c3c78;
+            border: 1.5px solid #000;
+            border-radius: 5px;
+            padding: 3px 8px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .lang-btn.active {
+            background-color: #5c3c78;
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        .logo-img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+            cursor: pointer;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            border: 2px solid #000;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #5c3c78;
+            background-color: #eee6f5;
+        }
+		
+        nav a .logo-img {
+            height: 24px;
+        }
+
+        main {
+            display: flex;
+            gap: 20px;
+            flex: 1;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+		
+        .box {
+            width: 100%;
+            flex: 1;
+            padding: 25px;
+            background-color: #faf8fc;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            min-height: 300px;
+            border-radius: 15px;
+        }
+
+        .box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #5c3c78;
+            align-self: center;
+        }
+
+        .box h4 {
+            margin-top: 15px;
+            margin-bottom: 5px;
+            color: #5c3c78;
+        }
+
+        .box p, .box ul {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .box ul {
+            padding-left: 20px;
+        }
+
+        footer {
+            background-color: #5c3c78;
+            color: #ffffff;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .footer-left .footer-info p {
+            color: #ffffff;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            margin-bottom: 4px;
+        }
+
+        .footer-center img {
+            height: 60px;
+            width: auto;
+        }
+
+        .footer-right img {
+            height: 70px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+    </style>
+</head>
+<body>
+    <div class="marcoa">
+        <header>
+            <h2 id="t-header">GAZTELEKUARI BURUZ</h2>
+            <div class="header-right">
+                <a href="index.html">
+                    <img src="Gazteleku Ermua.png" alt="Gazteleku Ermua Logo" class="logo-img">
+                </a>
+                <div class="lang-selector">
+                    <button type="button" class="lang-btn active" onclick="changeLanguage('eu', this)">EU</button>
+                    <button type="button" class="lang-btn" onclick="changeLanguage('en', this)">EN</button>
+                </div>
+            </div>
+        </header>
+		
+        <nav>
+            <a href="index.html">
+                <img src="Casa.png" alt="Casa Logo" class="logo-img">
+            </a>
+            <a href="JARDUEREN EGUTEGIA.html" id="t-nav-jarduerak">JARDUEREN EGUTEGIA</a>
+            <a href="IZENA EMATEA.html" id="t-nav-izena">IZENA EMATEA</a>
+        </nav>
+
+        <main>
+            <div class="box">
+                <h3 id="t-b1-h3">INFORMAZIO ANITZA GAZTELEKUARI BURUZ</h3>
+                
+                <h4 id="t-b1-h4-1">1. Nortzuk gara</h4>
+                <p id="t-b1-p-1">GAZTELEKU sortu berri den enpresa bat da, Ermuko Udalaren dirulaguntzari esker abian jarritakoa. Herriko gazteentzako aisialdi osasuntsua bultzatzea dugu helburu.</p>
+
+                <h4 id="t-b1-h4-2">2. Historia eta Ibilbidea</h4>
+                <p id="t-b1-p-2">Ermuan sortutako ekimena da, ikasturtean zehar nahiz udan zehar gazteen garapen soziala eta parte-hartze aktiboa sustatzen duena.</p>
+
+                <h4 id="t-b1-h4-3">3. Nori Zuzendua Dago</h4>
+                <p id="t-b1-p-3">Ermuko 12 eta 18 urte bitarteko gazteei zuzenduta dago (nazionalak zein atzerritarrak). Erabiltzaileak bazkide (urteko kuota ordainduta) edo ez-bazkide izan daitezke.</p>
+
+                <h4 id="t-b1-h4-4">4. Helburu Nagusia</h4>
+                <p id="t-b1-p-4">Web orri honen helburu nagusia gazteei informazioa erraz eta modu argian eskaintzea da, gaztelekua ezagutu eta ekintzetan parte hartu dezaten, aisialdi osasuntsua bultzatuz.</p>
+
+                <h4 id="t-b1-h4-5">5. Kokapena</h4>
+                <p id="t-b1-p-5">Zubiaurre Kalea, 12, 48260 Ermua (Bizkaia).</p>
+
+                <h4 id="t-b1-h4-6">6. Ordutegia</h4>
+                <p id="t-b1-p-6"><strong>Asteartetik Ostegunera:</strong> 16:30 – 20:00<br><br>				
+                <strong>Ostiral eta Larunbatetan:</strong> 16:30 – 21:30<br><br>				
+                <strong>Igandetan:</strong> 16:30 – 20:00<br><br>				
+                <em>(Astelehenetan itxita).</em></p>
+
+                <h4 id="t-b1-h4-7">7. Kontaktua</h4>
+                <p id="t-b1-p-7"><strong>Telefonoa:</strong> 943 17 20 25<br><br>
+                <strong>Posta elektronikoa:</strong> info@gaztelekua.eus</p>
+
+                <h4 id="t-b1-h4-8">8. Erabilera eta Funtzionamendu Arauak</h4>
+                <ul>
+                    <li id="t-b1-li-1"><strong>Monitore Arduraduna:</strong> Ekintza bakoitzak monitore bat izango du arduradun nagusi gisa.</li>
+					<p></p>
+                    <li id="t-b1-li-2"><strong>Hizkuntzak:</strong> Lan-hizkuntzak euskara eta ingelesa dira.</li>
+					<p></p>
+                    <li id="t-b1-li-3"><strong>Bazkidetza eta Erregistroa:</strong> Bazkideek urteko kuota baten bidez beherapenak dituzte, eta parte-hartzaile guztiak erregistratu egiten dira.</li>
+					<p></p>
+                    <li id="t-b1-li-4"><strong>Errespetua:</strong> Langileak (monitoreak eta administrazioa) zein instalazioak errespetuz zaintzea ezinbestekoa da.</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h3 id="t-b2-h3">JARDUEREN DESKRIBAPEN OROKORRA</h3>
+                
+                <h4 id="t-b2-h4-1">1. Jarduera Motak</h4>
+                <ul>
+                    <li id="t-b2-li-1"><strong>Asteburuetako ekintzak:</strong> Hitzaldiak, kontzertuak, jolasak, irteerak eta abar antolatzen dira ikasturtean zehar.</li>
+					<p></p>				
+                    <li id="t-b2-li-2"><strong>Udako ekintzak:</strong> Bi azpimotatan banatuta:					
+                        <ul>
+                            <li id="t-b2-li-2-1"><em>Egunez egingo diren ekintzak:</em> Surf hastapena, paddle surf-a, mendi irteerak eta abar.</li>							
+                            <li id="t-b2-li-2-2"><em>Lo egiteko udalekuak:</em> Gazteak bizi diren herri edo eskualdetik kanpo joaten dira denboraldi bat igarotzera.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4 id="t-b2-h4-2">2. Jardueren Ezaugarri Nagusiak</h4>
+                <ul>
+                    <li id="t-b2-li-3"><strong>Integrazio linguistikoa:</strong> Nazionalak zein atzerritarrak daudenez, jarduera guztiak bi hizkuntzatan daude: euskaraz eta ingelesez.</li>
+					<p></p>
+                    <li id="t-b2-li-4"><strong>Prezio bereziak bazkideentzat:</strong> Urteko kuotari esker, bazkideek prezio merkeagoak dituzte ez-bazkideekin alderatuta.</li>
+					<p></p>
+                    <li id="t-b2-li-5"><strong>Segurtasuna eta Jarraipena:</strong> Parte hartzen duten gazte guztiak datu-basean erregistratzen dira.</li>
+					<p></p>
+                </ul>
+
+                <h4 id="t-b2-h4-3">3. Nola Antolatzen Dira?</h4>
+                <ul>
+                    <li id="t-b2-li-6"><strong>Pertsonalaren antolaketa:</strong> Enpresak monitoreak eta administrazio lanetako langileak ditu.</li>
+					<p></p>
+                    <li id="t-b2-li-7"><strong>Arduradun Nagusia:</strong> Ekintza bakoitzak monitore arduradun nagusi bat du kudeaketarako.</li>
+					<p></p>
+                    <li id="t-b2-li-8"><strong>Digitalizazioa eta Inskripzioa:</strong> Programazioak, datak eta izen-emateak app-aren eta web orriaren bidez antolatzen dira.</li>
+					<p></p>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-left">
+                <div class="footer-info">
+                    <p>Zubiaurre Kalea, 12</p>
+                    <p>48260 Ermua, Bizkaia</p>
+                    <p>info@gaztelekua.eus</p>
+                    <p>943 17 20 25</p>
+                </div>
+            </div>
+
+            <div class="footer-center">
+                <img src="Gazteleku Ermua.png" alt="Gazteleku Ermua Logo" class="logo-img">
+            </div>
+
+            <div class="footer-right">
+                <img src="eusko-jaurlaritza-logo.png" alt="Eusko Jaurlaritza Logo">
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const translations = {
+            eu: {
+                header: "GAZTELEKUARI BURUZ",
+                "nav-jarduerak": "JARDUEREN EGUTEGIA",
+                "nav-izena": "IZENA EMATEA",
+                "b1-h3": "INFORMAZIO ANITZA GAZTELEKUARI BURUZ",
+                "b1-h4-1": "1. Nortzuk gara",
+                "b1-p-1": "Gaztelekua sortu berri den enpresa bat da, Ermuko Udalaren dirulaguntzari esker abian jarritakoa. Herriko gazteentzako aisialdi osasuntsua bultzatzea dugu helburu.",
+                "b1-h4-2": "2. Historia eta Ibilbidea",
+                "b1-p-2": "Ermuan sortutako ekimena da, ikasturtean zehar nahiz udan zehar gazteen garapen soziala eta parte-hartze aktiboa sustatzen duena.",
+                "b1-h4-3": "3. Nori Zuzendua Dago",
+                "b1-p-3": "Ermuko 12 eta 18 urte bitarteko gazteei zuzenduta dago (nazionalak zein atzerritarrak). Erabiltzaileak bazkide (urteko kuota ordainduta) edo ez-bazkide izan daitezke.",
+                "b1-h4-4": "4. Helburu Nagusia",
+                "b1-p-4": "Web orri honen helburu nagusia gazteei informazioa erraz eta modu argian eskaintzea da, gaztelekua ezagutu eta ekintzetan parte hartu dezaten, aisialdi osasuntsua bultzatuz.",
+                "b1-h4-5": "5. Kokapena",
+                "b1-p-5": "Zubiaurre Kalea, 12, 48260 Ermua (Bizkaia).",
+                "b1-h4-6": "6. Ordutegia",
+                "b1-p-6": "<strong>Asteartetik Ostegunera:</strong> 16:30 – 20:00<br><strong>Ostiral eta Larunbatetan:</strong> 16:30 – 21:30<br><strong>Igandetan:</strong> 16:30 – 20:00<br><em>(Astelehenetan itxita).</em>",
+                "b1-h4-7": "7. Kontaktua",
+                "b1-p-7": "<strong>Telefonoa:</strong> 943 17 20 25<br><strong>Posta elektronikoa:</strong> info@gaztelekua.eus",
+                "b1-h4-8": "8. Erabilera eta Funtzionamendu Arauak",
+                "b1-li-1": "<strong>Monitore Arduraduna:</strong> Ekintza bakoitzak monitore bat izango du arduradun nagusi gisa.",
+                "b1-li-2": "<strong>Hizkuntzak:</strong> Lan-hizkuntzak euskara eta ingelesa dira.",
+                "b1-li-3": "<strong>Bazkidetza eta Erregistroa:</strong> Bazkideek urteko kuota baten bidez beherapenak dituzte, eta parte-hartzaile guztiak erregistratu egiten dira.",
+                "b1-li-4": "<strong>Errespetua:</strong> Langileak (monitoreak eta administrazioa) zein instalazioak errespetuz zaintzea ezinbestekoa da.",
+                "b2-h3": "JARDUEREN DESKRIBAPEN OROKORRA",
+                "b2-h4-1": "1. Jarduera Motak",
+                "b2-li-1": "<strong>Asteburuetako ekintzak:</strong> Hitzaldiak, kontzertuak, jolasak, irteerak eta abar antolatzen dira ikasturtean zehar.",
+                "b2-li-2": "<strong>Udako ekintzak:</strong> Bi azpimotatan banatuta:",
+                "b2-li-2-1": "<em>Egunez egingo diren ekintzak:</em> Surf hastapena, paddle surf-a, mendi irteerak eta abar.",
+                "b2-li-2-2": "<em>Lo egiteko udalekuak:</em> Gazteak bizi diren herri edo eskualdetik kanpo joaten dira denboraldi bat igarotzera.",
+                "b2-h4-2": "2. Jardueren Ezaugarri Nagusiak",
+                "b2-li-3": "<strong>Integrazio linguistikoa:</strong> Nazionalak zein atzerritarrak daudenez, jarduera guztiak bi hizkuntzatan daude: euskaraz eta ingelesez.",
+                "b2-li-4": "<strong>Prezio bereziak bazkideentzat:</strong> Urteko kuotari esker, bazkideek prezio merkeagoak dituzte ez-bazkideekin alderatuta.",
+                "b2-li-5": "<strong>Segurtasuna eta Jarraipena:</strong> Parte hartzen duten gazte guztiak datu-basean erregistratzen dira.",
+                "b2-h4-3": "3. Nola Antolatzen Dira?",
+                "b2-li-6": "<strong>Pertsonalaren antolaketa:</strong> Enpresak monitoreak eta administrazio lanetako langileak ditu.",
+                "b2-li-7": "<strong>Arduradun Nagusia:</strong> Ekintza bakoitzak monitore arduradun nagusi bat du kudeaketarako.",
+                "b2-li-8": "<strong>Digitalizazioa eta Inskripzioa:</strong> Programazioak, datak eta izen-emateak app-aren eta web orriaren bidez antolatzen dira."
+            },
+            en: {
+                header: "ABOUT THE YOUTH CENTER",
+                "nav-jarduerak": "ACTIVITIES CALENDAR",
+                "nav-izena": "REGISTRATION",
+                "b1-h3": "GENERAL INFORMATION ABOUT THE YOUTH CENTER",
+                "b1-h4-1": "1. Who We Are",
+                "b1-p-1": "The Youth Center is a newly created organization launched thanks to funding from the Ermua City Council. Our goal is to promote healthy leisure activities for local youth.",
+                "b1-h4-2": "2. History and Background",
+                "b1-p-2": "This is an initiative created in Ermua that promotes youth social development and active participation both during the school year and the summer.",
+                "b1-h4-3": "3. Target Audience",
+                "b1-p-3": "It is aimed at youth aged 12 to 18 in Ermua (both local and international). Users can be members (by paying an annual fee) or non-members.",
+                "b1-h4-4": "4. Main Objective",
+                "b1-p-4": "The main objective of this website is to provide clear and easy information to young people so they can discover the youth center and join activities.",
+                "b1-h4-5": "5. Location",
+                "b1-p-5": "Zubiaurre Kalea, 12, 48260 Ermua (Bizkaia).",
+                "b1-h4-6": "6. Opening Hours",
+                "b1-p-6": "<strong>Tuesday to Thursday:</strong> 16:30 – 20:00<br><br><strong>Friday and Saturday:</strong> 16:30 – 21:30<br><br><strong>Sunday:</strong> 16:30 – 20:00<br><br><em>(Closed on Mondays).</em>",
+                "b1-h4-7": "7. Contact",
+                "b1-p-7": "<strong>Phone:</strong> 943 17 20 25<br><br><strong>Email:</strong> info@gaztelekua.eus",
+                "b1-h4-8": "8. Rules of Use and Operation",
+                "b1-li-1": "<strong>Head Instructor:</strong> Each activity will have a lead instructor in charge.",
+                "b1-li-2": "<strong>Languages:</strong> The working languages are Basque and English.",
+                "b1-li-3": "<strong>Membership & Registration:</strong> Members enjoy discounts through an annual fee, and all participants are registered.",
+                "b1-li-4": "<strong>Respect:</strong> Respecting both the staff (instructors and admin) and the facilities is mandatory.",
+                "b2-h3": "GENERAL DESCRIPTION OF ACTIVITIES",
+                "b2-h4-1": "1. Types of Activities",
+                "b2-li-1": "<strong>Weekend Activities:</strong> Talks, concerts, games, trips, and more are organized throughout the academic year.",
+                "b2-li-2": "<strong>Summer Activities:</strong> Divided into two subcategories:",
+                "b2-li-2-1": "<em>Day activities:</em> Intro to surfing, paddle surfing, hiking trips, etc.",
+                "b2-li-2-2": "<em>Overnight camps:</em> Youth travel outside their town or region to spend a short period.",
+                "b2-h4-2": "2. Main Features of Activities",
+                "b2-li-3": "<strong>Linguistic Integration:</strong> Since participants are both local and international, all activities are conducted in two languages: Basque and English.",
+                "b2-li-4": "<strong>Special Rates for Members:</strong> Thanks to the annual fee, members get cheaper prices compared to non-members.",
+                "b2-li-5": "<strong>Safety and Tracking:</strong> All participating youth are registered in the database.",
+                "b2-h4-3": "3. How Are They Organized?",
+                "b2-li-6": "<strong>Staff Organization:</strong> The company has instructors and administrative staff.",
+                "b2-li-7": "<strong>Main Supervisor:</strong> Each activity has a chief instructor managing it.",
+                "b2-li-8": "<strong>Digitalization & Registration:</strong> Schedules, dates, and sign-ups are managed via the app and website."
+            }
+        };
+
+        function changeLanguage(lang, element) {
+            for (let id in translations[lang]) {
+                const el = document.getElementById('t-' + id);
+                if (el) {
+                    el.innerHTML = translations[lang][id];
+                }
+            }
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            if (element) {
+                element.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<head>
+    <title>ERMUA GAZTELEKUA</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #5C3C78;
+        }
+
+        .marcoa {
+            padding: 20px;
+            background-color: #5C3C78;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        header h2 {
+            font-size: 2rem;
+            color: #faf8fc;
+        }
+
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        .lang-selector {
+            display: flex;
+            gap: 5px;
+        }
+
+        .lang-btn {
+            background-color: #eee6f5;
+            color: #5c3c78;
+            border: 1.5px solid #000;
+            border-radius: 5px;
+            padding: 3px 8px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .lang-btn.active {
+            background-color: #5c3c78;
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        .logo-img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+            cursor: pointer;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            border: 2px solid #000;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #5c3c78;
+            background-color: #eee6f5;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        nav a.active {
+            background-color: #5c3c78;
+            color: #ffffff;
+        }
+		
+        nav a .logo-img {
+            height: 24px;
+        }
+
+        main {
+            display: flex;
+            gap: 20px;
+            flex: 1;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .calendario {
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            background-color: #faf8fc;
+        }
+		
+        .box {
+            width: 100%;
+            flex: 1;
+            padding: 25px;
+            background-color: #faf8fc;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            min-height: 300px;
+            border-radius: 15px;
+        }
+
+        .box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #5c3c78;
+            align-self: center;
+        }
+
+        .box h4 {
+            margin-top: 15px;
+            margin-bottom: 5px;
+            color: #5c3c78;
+        }
+
+        .box p, .box ul {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .box ul {
+            padding-left: 20px;
+        }
+
+        footer {
+            background-color: #5c3c78;
+            color: #ffffff;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .footer-left .footer-info p {
+            color: #ffffff;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            margin-bottom: 4px;
+        }
+
+        .footer-center img {
+            height: 60px;
+            width: auto;
+        }
+
+        .footer-right img {
+            height: 70px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="marcoa">
+        <header>
+            <h2 id="t-header">JARDUEREN EGUTEGIA</h2>
+            <div class="header-right">
+                <a href="index.html">
+                    <img src="Gazteleku Ermua.png" alt="Gazteleku Ermua Logo" class="logo-img">
+                </a>
+                <div class="lang-selector">
+                    <button type="button" class="lang-btn active" onclick="changeLanguage('eu', this)">EU</button>
+                    <button type="button" class="lang-btn" onclick="changeLanguage('en', this)">EN</button>
+                </div>
+            </div>
+        </header>
+		
+        <nav>
+            <a href="index.html">
+                <img src="Casa.png" alt="Casa Logo" class="logo-img">
+            </a>
+            <a href="GAZTELEKUARI BURUZ.html" id="t-nav-gaztelekua">GAZTELEKUARI BURUZ</a>	
+            <a href="IZENA EMATEA.html" id="t-nav-izena">IZENA EMATEA</a>
+        </nav>
+
+        <section class="calendario">
+            <iframe src="https://calendar.google.com/calendar/embed?src=c_3c25c230bb52a0fb8210c7742bb238e8eee38920a9c668341fbe91a49aa1b7dd%40group.calendar.google.com&ctz=Europe%2FMadrid" 
+             style="border: 0" 
+             width="100%" 
+             height="600px" 
+             frameborder="0" 
+             scrolling="no">
+            </iframe>
+        </section>
+		
+        <footer>
+            <div class="footer-left">
+                <div class="footer-info">
+                    <p>Zubiaurre Kalea, 12</p>
+                    <p>48260 Ermua, Bizkaia</p>
+                    <p>info@gaztelekua.eus</p>
+                    <p>943 17 20 25</p>
+                </div>
+            </div>
+
+            <div class="footer-center">
+                <img src="Gazteleku Ermua.png" alt="Gazteleku Ermua Logo" class="logo-img">
+            </div>
+
+            <div class="footer-right">
+                <img src="eusko-jaurlaritza-logo.png" alt="Eusko Jaurlaritza Logo">
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const translations = {
+            eu: {
+                header: "JARDUEREN EGUTEGIA",
+                "nav-gaztelekua": "GAZTELEKUARI BURUZ",
+                "nav-jarduerak": "JARDUEREN EGUTEGIA",
+                "nav-izena": "IZENA EMATEA"
+            },
+            en: {
+                header: "ACTIVITIES CALENDAR",
+                "nav-gaztelekua": "ABOUT THE YOUTH CENTER",
+                "nav-jarduerak": "ACTIVITIES CALENDAR",
+                "nav-izena": "REGISTRATION"
+            }
+        };
+
+        function changeLanguage(lang, element) {
+            for (let id in translations[lang]) {
+                const el = document.getElementById('t-' + id);
+                if (el) {
+                    el.textContent = translations[lang][id];
+                }
+            }
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            if (element) {
+                element.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>

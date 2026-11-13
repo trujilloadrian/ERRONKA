@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<head>
+    <title>ERMUA GAZTELEKUA</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #5C3C78;
+        }
+
+        .marcoa {
+            padding: 20px;
+            background-color: #5C3C78;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        header h2 {
+            font-size: 2rem;
+            color: #faf8fc;
+        }
+
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        .lang-selector {
+            display: flex;
+            gap: 5px;
+        }
+
+        .lang-btn {
+            background-color: #eee6f5;
+            color: #5c3c78;
+            border: 1.5px solid #000;
+            border-radius: 5px;
+            padding: 3px 8px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .lang-btn.active {
+            background-color: #5c3c78;
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        .logo-img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+            cursor: pointer;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            border: 2px solid #000;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #5c3c78;
+            background-color: #eee6f5;
+        }
+        
+        nav a img.nav-icon {
+            height: 20px;
+            width: 100%;
+        }
+
+        main {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+            align-items: flex-start;
+        }
+        
+        .box {
+            width: 100%;
+            padding: 30px;
+            background-color: #faf8fc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 15px;
+        }
+
+        .box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            color: #5c3c78;
+            text-align: center;
+        }
+
+        .formulario {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            font-size: 0.95rem;
+            color: #5c3c78;
+        }
+
+        .form-group input {
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            font-size: 1rem;
+            background-color: #fff;
+        }
+
+        .btn-submit {
+            margin-top: 10px;
+            padding: 12px;
+            border: 2px solid #5c3c78;
+            border-radius: 10px;
+            background-color: #F2EFFE;
+            color: #5c3c78;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        
+        footer {
+            background-color: #5c3c78;
+            color: #ffffff;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .footer-left .footer-info p {
+            color: #ffffff;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            margin-bottom: 4px;
+        }
+
+        .footer-center img {
+            height: 60px;
+            width: auto;
+        }
+
+        .footer-right img {
+            height: 70px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+    </style>    
+</head>
+<body>
+    <div class="marcoa">
+        <header>
+            <h2 id="t-header">IZENA EMATEA</h2>
+            <div class="header-right">
+                <a href="index.html">
+                    <img src="Gazteleku Ermua.png" alt="Gazteleku Ermua Logo" class="logo-img">
+                </a>
+                <div class="lang-selector">
+                    <button type="button" class="lang-btn active" onclick="changeLanguage('eu')">EU</button>
+                    <button type="button" class="lang-btn" onclick="changeLanguage('en')">EN</button>
+                </div>
+            </div>
+        </header>
+        
+        <nav>
+            <a href="index.html">
+                <img src="Casa.png" alt="Casa Logo" class="nav-icon">
+            </a>
+            <a href="GAZTELEKUARI BURUZ.html" id="t-gaztelekua">GAZTELEKUARI BURUZ</a>
+            <a href="JARDUEREN EGUTEGIA.html" id="t-jarduerak">JARDUEREN EGUTEGIA</a>
+        </nav>
+
+        <main>
+            <div class="box">
+                <h3 id="t-titulo">DATUAK SARTZEKO FORMULARIOA</h3>
+                <form class="formulario">
+                    <div class="form-group">
+                        <label for="nan" id="t-nan">NAN:</label>
+                        <input type="text" id="nan" name="nan" placeholder="12345678X" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="izena" id="t-izena">IZENA:</label>
+                        <input type="text" id="izena" name="izena" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="abizena" id="t-abizena">ABIZENA:</label>
+                        <input type="text" id="abizena" name="abizena" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jaiotze_data" id="t-jaiotze">JAIOTZE DATA:</label>
+                        <input type="date" id="jaiotze_data" name="jaiotze_data" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="TELEFONOA" id="t-telefonoa">TELEFONOA:</label>
+                        <input type="text" pattern="[0-9]{9}" id="TELEFONOA" name="TELEFONOA" required>
+                    </div>
+
+                    <button type="submit" class="btn-submit" id="t-bidali">BIDALI</button>
+                </form>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="footer-left">
+                <div class="footer-info">
+                    <p>Zubiaurre Kalea, 12</p>
+                    <p>48260 Ermua, Bizkaia</p>
+                    <p>info@gaztelekua.eus</p>
+                    <p>943 17 20 25</p>
+                </div>
+            </div>
+
+            <div class="footer-center">
+                <img src="Gazteleku Ermua.png" alt="Gazteleku Ermua Logo" class="logo-img">
+            </div>
+
+            <div class="footer-right">
+                <img src="eusko-jaurlaritza-logo.png" alt="Eusko Jaurlaritza Logo">
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const translations = {
+            eu: {
+                header: "IZENA EMATEA",
+                gaztelekua: "GAZTELEKUARI BURUZ",
+                jarduerak: "JARDUEREN EGUTEGIA",
+                titulo: "DATUAK SARTZEKO FORMULARIOA",
+                nan: "NAN:",
+                izena: "IZENA:",
+                abizena: "ABIZENA:",
+                jaiotze: "JAIOTZE DATA:",
+                telefonoa: "TELEFONOA:",
+                bidali: "BIDALI"
+            },
+            en: {
+                header: "REGISTRATION",
+                gaztelekua: "ABOUT THE YOUTH CENTER",
+                jarduerak: "ACTIVITIES CALENDAR",
+                titulo: "DATA ENTRY FORM",
+                nan: "ID:",
+                izena: "FIRST NAME:",
+                abizena: "LAST NAME:",
+                jaiotze: "DATE OF BIRTH:",
+                telefonoa: "PHONE NUMBER:",
+                bidali: "SUBMIT"
+            }
+        };
+
+        function changeLanguage(lang) {
+            for (let id in translations[lang]) {
+                document.getElementById('t-' + id).textContent = translations[lang][id];
+            }
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
